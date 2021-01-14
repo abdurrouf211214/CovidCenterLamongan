@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bground"
+    tools:context=".BagikanActivity">
+
+    <FrameLayout
+        android:id="@+id/framebagikan"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/sh_kodeqr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/b_link"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:text="https://s.id/cclapp"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/framebagikan"
+        app:layout_constraintStart_toStartOf="@+id/framebagikan"
+        app:layout_constraintTop_toBottomOf="@+id/framebagikan" />
+
+    <Button
+        android:id="@+id/h_wa"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/sh_wa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/h_twitter"
+        app:layout_constraintTop_toBottomOf="@+id/b_link" />
+
+    <Button
+        android:id="@+id/h_twitter"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/sh_twitter"
+        app:layout_constraintEnd_toStartOf="@+id/h_pesan"
+        app:layout_constraintStart_toEndOf="@+id/h_wa"
+        app:layout_constraintTop_toBottomOf="@+id/b_link" />
+
+    <Button
+        android:id="@+id/h_pesan"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/sh_sms"
+        app:layout_constraintEnd_toStartOf="@+id/h_gmail"
+        app:layout_constraintStart_toEndOf="@+id/h_twitter"
+        app:layout_constraintTop_toBottomOf="@+id/b_link" />
+
+    <Button
+        android:id="@+id/h_gmail"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/sh_gmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/h_pesan"
+        app:layout_constraintTop_toBottomOf="@+id/b_link" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

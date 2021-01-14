@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bground"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <FrameLayout
+                android:id="@+id/framehome"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/h_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/infohome"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/h_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/framehome" />
+
+            <TextView
+                android:id="@+id/h_covidindo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Data Covid-19 di Indonesia"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infohome" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/h_indopositif"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/h_nas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/h_indosembuh"
+                app:layout_constraintTop_toBottomOf="@+id/h_covidindo" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/h_positif"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/h_positif" />
+
+                    <TextView
+                        android:id="@+id/datapositif"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="No Internet"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/positif"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Positif"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/h_indosembuh"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/h_jateng"
+                app:layout_constraintEnd_toStartOf="@+id/h_indomeninggal"
+                app:layout_constraintStart_toEndOf="@+id/h_indopositif"
+                app:layout_constraintTop_toBottomOf="@+id/h_covidindo" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/h_sembuh"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/h_sembuh" />
+
+                    <TextView
+                        android:id="@+id/datasembuh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="No Internet"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sembuh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sembuh"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/h_indomeninggal"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/h_jepara"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/h_indosembuh"
+                app:layout_constraintTop_toBottomOf="@+id/h_covidindo" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/h_meninggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/h_meninggal" />
+
+                    <TextView
+                        android:id="@+id/datameninggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="No Internet"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/meninggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Meninggal"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/h_covidprov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif"
+                android:text="Data Covid-19 per Provinsi"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/h_indopositif" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/h_infocovidprov"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/h_covidprov" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="visible">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:backgroundTint="@android:color/transparent"
+                        android:backgroundTintMode="@android:color/transparent" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/h_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif"
+                android:text="Menu Utama"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/h_infocovidprov" />
+
+            <Button
+                android:id="@+id/hperiksa"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/h_periksa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/htips"
+                app:layout_constraintTop_toBottomOf="@+id/h_menu" />
+
+            <Button
+                android:id="@+id/htips"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/h_tips"
+                app:layout_constraintEnd_toStartOf="@+id/hfaq"
+                app:layout_constraintStart_toEndOf="@+id/hperiksa"
+                app:layout_constraintTop_toBottomOf="@+id/h_menu" />
+
+            <Button
+                android:id="@+id/hfaq"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/h_faq"
+                app:layout_constraintEnd_toStartOf="@+id/habout"
+                app:layout_constraintStart_toEndOf="@+id/htips"
+                app:layout_constraintTop_toBottomOf="@+id/h_menu" />
+
+            <Button
+                android:id="@+id/habout"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/h_tentang"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/hfaq"
+                app:layout_constraintTop_toBottomOf="@+id/h_menu" />
+
+            <TextView
+                android:id="@+id/h_cegahcovid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif"
+                android:text="Pencegahan Covid-19"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hperiksa" />
+
+            <ScrollView
+                android:id="@+id/sv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/h_cegahcovid" >
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="370dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/h_info1"
+                        android:layout_marginStart="10dp"/>
+
+                    <ImageView
+                        android:layout_width="370dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/h_info2"
+                        android:layout_marginStart="10dp" />
+
+                    <ImageView
+                        android:layout_width="370dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/h_info3"
+                        android:layout_marginStart="10dp" />
+
+                    <ImageView
+                        android:layout_width="370dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/h_info4"
+                        android:layout_marginStart="10dp"/>
+
+                    <ImageView
+                        android:layout_width="370dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/h_info5"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+
+                </LinearLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/h_web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Web Tanggap Covid-19"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sv2" />
+
+            <Button
+                android:id="@+id/wnas"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/h_nas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/wjatim"
+                app:layout_constraintTop_toBottomOf="@+id/h_web" />
+
+            <Button
+                android:id="@+id/wjatim"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/h_jatim"
+                app:layout_constraintEnd_toStartOf="@+id/wlamongan"
+                app:layout_constraintStart_toEndOf="@+id/wnas"
+                app:layout_constraintTop_toBottomOf="@+id/h_web" />
+
+            <Button
+                android:id="@+id/wlamongan"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/h_lamongan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/wjatim"
+                app:layout_constraintTop_toBottomOf="@+id/h_web" />
+
+            <TextView
+                android:id="@+id/h_lain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Lainnya"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wnas" />
+
+            <Button
+                android:id="@+id/hotline"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/h_hotline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/h_lain" />
+
+            <Button
+                android:id="@+id/whatsapp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/h_wa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hotline"/>
+
+            <Button
+                android:id="@+id/share"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/h_share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/whatsapp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
